@@ -1,0 +1,23 @@
+---
+permalink: /
+---
+
+<div class="flex items-center h-screen">
+
+    <div class="flex">
+
+        {% for service in site.services %}
+        <div class="bg-{{service.background_color}} p-8 rounded mr-4 shadow-lg hover:shadow-2xl transition-0.3 text-white flex-1 flex items-center justify-center">
+            <a href="{{service.service_url}}">
+                {% if service.logo %}
+                <img src="{{service.logo | absolute_url}}" />
+                {% else %}
+                <h2>{{service.name}}</h2>
+                {% endif %}
+            </a>
+        </div>
+        {% endfor %}
+
+    </div>
+
+</div>
